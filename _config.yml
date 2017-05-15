@@ -69,6 +69,9 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
 - type: git
+  repo: git@bxhvps:/var/repo/blog.git 
+  branch: master
+- type: git
   repo: git@github.com:bxh566/bxh566.github.io.git
   branch: master
 backup:
