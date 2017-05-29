@@ -3,7 +3,8 @@ title: Mac MotoX
 date: 2017-05-15 05:18:19
 tags:
 ---
-## 用Mac给MotoX刷机
+用Mac给MotoX刷机
+
 ### 解锁BL
 1. 安装fastboot
 ```
@@ -48,17 +49,17 @@ fastboot flash recovery twrp-3.1.0-0-victara.img
 下载地址参考 http://bbs.ihei5.com/thread-743540-1-1.html
 2. 进入fastboot，选择recovery
 3. 选择wipe - advanced wipe - 全部打勾 -swipe to wipe. 
->由于没有外接otg，otg会显示error，忽视之.  
->此步骤会把原有系统都清除掉，重启会不能进入手机，只能进入fastboot，谨慎对待
+*由于没有外接otg，otg会显示error，忽视之.*
+*此步骤会把原有系统都清除掉，重启会不能进入手机，只能进入fastboot，谨慎对待*
 4. copy rom包到手机, 用adb push命令
->Mac下，无法识别android，无法直接copy
->手机进入fastboot，然后连接电脑，命令行输入adb devices，无输出；然后选择recovery，再从命令行输入adb devices，有输出recovery
+*Mac下，无法识别android，无法直接copy.*
+*手机进入fastboot，然后连接电脑，命令行输入adb devices，无输出；然后选择recovery，再从命令行输入adb devices，有输出recovery*
 ```
 adb push lineage-14.1-20170430-UNOFFICIAL-victara.zip /sdcard/.
 ```
 5. 从recovery页面选择install ,然后点击刚刚复制进去的rom包安装即可
 6. 等待开机即可，由于是第一次开机所以会比较慢一点。
->默认关闭root,开启root方法为在开发者选项里的“Root授权”，选择仅限于adb即可
+*默认关闭root,开启root方法为在开发者选项里的“Root授权”，选择仅限于adb即可*
 
 ### 全局root
 1. 下载root卡刷包  
@@ -66,5 +67,7 @@ http://www.lineageosrom.com/2017/01/download-supersuzp-and-su-removalzip.html，
 2. 进入recovery并刷入， 就可以在开发者选项修改了
 
 ### 去除网络的感叹号
+```
 adb shell "settings put global captive_portal_https_url https://captive.v2ex.co/generate_204";
->也可以下载JuiceSSH，连接本地设备，输入su， 然后再输入命令“settings put global captive_portal_https_url https://captive.v2ex.co/generate_204”
+```
+*也可以下载JuiceSSH，连接本地设备，输入su， 然后再输入命令“settings put global captive_portal_https_url https://captive.v2ex.co/generate_204”*
