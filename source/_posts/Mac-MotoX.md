@@ -1,7 +1,7 @@
 ---
 title: Mac MotoX
 date: 2017-05-15 05:18:19
-tags: mac motox life
+tags: [mac, motox, life]
 ---
 用Mac给MotoX刷机
 

@@ -1,7 +1,7 @@
 ---
 title: Mac
 date: 2017-05-11 10:26:46
-tags: mac note
+tags: [mac, note]
 ---
 ### check port with pid
 ```

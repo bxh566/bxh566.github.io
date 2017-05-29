@@ -1,7 +1,7 @@
 ---
 title: DB2 Execution Plan
 date: 2017-05-29 19:06:34
-tags: db2 note
+tags: [db2, note]
 ---
 ## DB2 execution plan for stored procedure:
 [collecting explain data](http://www-01.ibm.com/support/docview.wss?uid=swg21279292)
@@ -45,5 +45,21 @@ db2 -tvf ~/sqllib/misc/EXPLAIN.DDL
       db2start
       ```
 
+## SQLs
+### get package name
+```sql
+select
+r.routineschema,r.routinename,rd.bname as packagename
+from syscat.routines r,syscat.routinedep rd
+where r.specificname=rd.specificname
+and r.routineschema=rd.routineschema
+and rd.btype='K'
+and r.routineschema = upper('schema')
+and r.routinename = upper('spname')
+```
 
-
+### get section of sp
+```sql
+--package name from above
+select sectno, cast(text as varchar(32000)) from syscat.statements where pkgschema='schema' and pkgname='P0000000001'
+```
