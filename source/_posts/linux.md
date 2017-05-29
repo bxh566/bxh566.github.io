@@ -1,7 +1,7 @@
 ---
 title: linux
 date: 2017-05-11 04:12:37
-tags: note
+tags: linux note
 ---
 ### kill java
 ```bash
