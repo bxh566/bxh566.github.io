@@ -1,5 +1,5 @@
 ---
-title: DB2 Execution Plan
+title: DB2
 date: 2017-05-29 19:06:34
 tags: [db2, note]
 ---
@@ -63,3 +63,11 @@ and r.routinename = upper('spname')
 --package name from above
 select sectno, cast(text as varchar(32000)) from syscat.statements where pkgschema='schema' and pkgname='P0000000001'
 ```
+
+### get table size
+```sql
+select TABSCHEMA, tabname, CARD as ROWS from SYSCAT.TABLES where lower(tabname) in ('tablename') and TABSCHEMA in ('schema') with ur  
+```
+
+
+
