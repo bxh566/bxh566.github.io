@@ -40,3 +40,12 @@ jenv local 1.6: set current folder use java 1.6
 jenv versions
 ```
 
+### check entry in PATH
+```
+/etc/bashrc
+/etc/profile
+~/.bashrc
+~/.bash_profile
+~/.profile
+~/.MacOSX/environment.plist
+```
