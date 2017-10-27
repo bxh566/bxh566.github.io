@@ -15,3 +15,9 @@ echo "Script executed from: ${PWD}"
 BASEDIR=$(dirname $0)
 echo "Script location: ${BASEDIR}"
 ```
+
+### generate ssh id key
+```bash
+ssh-keygen -t rsa -b 4096 -C "yourname@emailaddress" -N "" -f ~/.ssh/id_rsa
+```
+
