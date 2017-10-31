@@ -12,3 +12,11 @@ VBoxManage modifyvm default --cpus 2
 VBoxManage modifyvm default --memory 4096
 docker-machine start
 ```
+
+### docker mirrors - china
+```
+https://docker.mirrors.ustc.edu.cn
+https://hub-mirror.c.163.com
+```
+
+
