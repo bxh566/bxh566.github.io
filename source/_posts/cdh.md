@@ -1,7 +1,7 @@
 ---
 title: cdh
 date: 2017-10-30 18:09:07
-tags:[note, Cloudera, docker]
+tags: [note, Cloudera, docker]
 ---
 ## Cloudera
 
