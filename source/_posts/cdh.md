@@ -12,5 +12,10 @@ docker-machine create cdh --virtualbox-memory "5120" --virtualbox-cpu-count 4 --
 docker pull cloudera/quickstart:latest
 ```
 
+```
+docker run -it --hostname=quickstart.cloudera --privileged=true -p 8888:8888 -P -d cloudera/quickstart:latest /usr/bin/docker-quickstart
+```
+
+
 
 
