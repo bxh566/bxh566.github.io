@@ -49,3 +49,25 @@ jenv versions
 ~/.profile
 ~/.MacOSX/environment.plist
 ```
+
+### local virtual server without changing /etc/hosts
+1. install POW
+```
+curl get.pow.cx | sh
+```
+1. add a local server to pow by proxy port
+```
+echo 'http://192.168.99.100' > ~/.pow/myapp
+```
+1. visit myapp.test, can access web application in 192.168.99.100
+1. install powder 
+```
+gem install powder
+```
+1. use powder to manage pow
+```
+pow down #disable pow server
+pow up #enable pow server
+```
+##note## pow use port 80 in host machine to redirect request
+
