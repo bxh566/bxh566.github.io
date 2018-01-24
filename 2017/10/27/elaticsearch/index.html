@@ -1,0 +1,729 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="note,es," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="docker12docker-machine sshsudo sysctl -w vm.max_map_count=262144 docker imageDockerfile:123456789101112131415161718192021FROM java:openjdk-8-alpineRUN addgroup -S elasticsearch &amp;amp;&amp;amp; adduser -S -">
+<meta name="keywords" content="note,es">
+<meta property="og:type" content="article">
+<meta property="og:title" content="elaticsearch">
+<meta property="og:url" content="https://bxh566.github.io/2017/10/27/elaticsearch/index.html">
+<meta property="og:site_name" content="bxh566">
+<meta property="og:description" content="docker12docker-machine sshsudo sysctl -w vm.max_map_count=262144 docker imageDockerfile:123456789101112131415161718192021FROM java:openjdk-8-alpineRUN addgroup -S elasticsearch &amp;amp;&amp;amp; adduser -S -">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-01-24T06:36:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="elaticsearch">
+<meta name="twitter:description" content="docker12docker-machine sshsudo sysctl -w vm.max_map_count=262144 docker imageDockerfile:123456789101112131415161718192021FROM java:openjdk-8-alpineRUN addgroup -S elasticsearch &amp;amp;&amp;amp; adduser -S -">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://bxh566.github.io/2017/10/27/elaticsearch/"/>
+
+
+
+
+
+  <title>elaticsearch | bxh566</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">bxh566</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">work-life balance</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://bxh566.github.io/2017/10/27/elaticsearch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="bxh566">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/mario.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bxh566">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">elaticsearch</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T01:02:02+00:00">
+                2017-10-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker-machine ssh</span><br><span class="line">sudo sysctl -w vm.max_map_count=262144</span><br></pre></td></tr></table></figure>
+<h3 id="docker-image"><a href="#docker-image" class="headerlink" title="docker image"></a>docker image</h3><p>Dockerfile:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">FROM java:openjdk-8-alpine</span><br><span class="line"></span><br><span class="line">RUN addgroup -S elasticsearch &amp;&amp; adduser -S -G elasticsearch elasticsearch</span><br><span class="line"></span><br><span class="line">RUN apk add --no-cache bash curl</span><br><span class="line"></span><br><span class="line">WORKDIR /work</span><br><span class="line"></span><br><span class="line">RUN chown elasticsearch:elasticsearch /work</span><br><span class="line"></span><br><span class="line">USER elasticsearch</span><br><span class="line"></span><br><span class="line">EXPOSE 9200 9300</span><br><span class="line"></span><br><span class="line">RUN curl -s https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.3.tar.gz |tar -xz</span><br><span class="line"></span><br><span class="line">COPY es-docker elasticsearch-5.6.3/bin/</span><br><span class="line"></span><br><span class="line">WORKDIR /work/elasticsearch-5.6.3</span><br><span class="line"></span><br><span class="line">CMD bin/es-docker</span><br></pre></td></tr></table></figure></p>
+<h4 id="script"><a href="#script" class="headerlink" title="script"></a>script</h4><p><a href="https://github.com/elastic/elasticsearch-docker/blob/5.6/build/elasticsearch/bin/es-docker" target="_blank" rel="noopener">es-docker</a><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Run Elasticsearch and allow setting default settings via env vars</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># e.g. Setting the env var cluster.name=testcluster</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># will cause Elasticsearch to be invoked with -Ecluster.name=testcluster</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># see https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html#_setting_default_settings</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">declare</span> -a es_opts</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> IFS=<span class="string">'='</span> <span class="built_in">read</span> -r envvar_key envvar_value</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="comment"># Elasticsearch env vars need to have at least two dot separated lowercase words, e.g. `cluster.name`</span></span><br><span class="line">    <span class="keyword">if</span> [[ <span class="string">"<span class="variable">$envvar_key</span>"</span> =~ ^[a-z_]+\.[a-z_]+ ]]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        <span class="keyword">if</span> [[ ! -z <span class="variable">$envvar_value</span> ]]; <span class="keyword">then</span></span><br><span class="line">          es_opt=<span class="string">"-E<span class="variable">$&#123;envvar_key&#125;</span>=<span class="variable">$&#123;envvar_value&#125;</span>"</span></span><br><span class="line">          es_opts+=(<span class="string">"<span class="variable">$&#123;es_opt&#125;</span>"</span>)</span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span> &lt; &lt;(env)</span><br><span class="line"></span><br><span class="line"><span class="comment"># The virtual file /proc/self/cgroup should list the current cgroup</span></span><br><span class="line"><span class="comment"># membership. For each hierarchy, you can follow the cgroup path from</span></span><br><span class="line"><span class="comment"># this file to the cgroup filesystem (usually /sys/fs/cgroup/) and</span></span><br><span class="line"><span class="comment"># introspect the statistics for the cgroup for the given</span></span><br><span class="line"><span class="comment"># hierarchy. Alas, Docker breaks this by mounting the container</span></span><br><span class="line"><span class="comment"># statistics at the root while leaving the cgroup paths as the actual</span></span><br><span class="line"><span class="comment"># paths. Therefore, Elasticsearch provides a mechanism to override</span></span><br><span class="line"><span class="comment"># reading the cgroup path from /proc/self/cgroup and instead uses the</span></span><br><span class="line"><span class="comment"># cgroup path defined the JVM system property</span></span><br><span class="line"><span class="comment"># es.cgroups.hierarchy.override. Therefore, we set this value here so</span></span><br><span class="line"><span class="comment"># that cgroup statistics are available for the container this process</span></span><br><span class="line"><span class="comment"># will run in.</span></span><br><span class="line"><span class="built_in">export</span> ES_JAVA_OPTS=<span class="string">"-Des.cgroups.hierarchy.override=/ <span class="variable">$ES_JAVA_OPTS</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exec</span> bin/elasticsearch <span class="string">"<span class="variable">$&#123;es_opts[@]&#125;</span>"</span></span><br></pre></td></tr></table></figure></p>
+<p>####docker compose<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">version: &apos;2&apos;</span><br><span class="line">services:</span><br><span class="line">  elasticsearch1:</span><br><span class="line">    container_name: elasticsearch1</span><br><span class="line">    image: es</span><br><span class="line">    environment:</span><br><span class="line">      - cluster.name=docker-cluster</span><br><span class="line">      - network.host=0.0.0.0</span><br><span class="line">      - node.name=master</span><br><span class="line">      - discovery.zen.minimum_master_nodes=1</span><br><span class="line">      - bootstrap.memory_lock=true</span><br><span class="line">      - &quot;ES_JAVA_OPTS=-Xms512m -Xmx512m&quot;</span><br><span class="line">    ulimits:</span><br><span class="line">      memlock:</span><br><span class="line">        soft: -1</span><br><span class="line">        hard: -1</span><br><span class="line">    mem_limit: 1g</span><br><span class="line">    volumes:</span><br><span class="line">      - esdata1:/usr/share/elasticsearch/data</span><br><span class="line">    ports:</span><br><span class="line">      - 9200:9200</span><br><span class="line">    networks:</span><br><span class="line">      - esnet</span><br><span class="line"></span><br><span class="line">  elasticsearch2:</span><br><span class="line">    container_name: elasticsearch2</span><br><span class="line">    image: es</span><br><span class="line">    environment:</span><br><span class="line">      - cluster.name=docker-cluster</span><br><span class="line">      - network.host=0.0.0.0</span><br><span class="line">      - node.name=node1</span><br><span class="line">      - discovery.zen.ping.unicast.hosts=elasticsearch1</span><br><span class="line">      - node.master=false</span><br><span class="line">      - bootstrap.memory_lock=true</span><br><span class="line">      - &quot;ES_JAVA_OPTS=-Xms512m -Xmx512m&quot;</span><br><span class="line">    ulimits:</span><br><span class="line">      memlock:</span><br><span class="line">        soft: -1</span><br><span class="line">        hard: -1</span><br><span class="line">    mem_limit: 1g</span><br><span class="line">    volumes:</span><br><span class="line">      - esdata2:/usr/share/elasticsearch/data</span><br><span class="line">    networks:</span><br><span class="line">      - esnet</span><br><span class="line"></span><br><span class="line">volumes:</span><br><span class="line">  esdata1:</span><br><span class="line">    driver: local</span><br><span class="line">  esdata2:</span><br><span class="line">    driver: local</span><br><span class="line"></span><br><span class="line">networks:</span><br><span class="line">  esnet:</span><br><span class="line">    driver: bridge</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+            <a href="/tags/es/" rel="tag"># es</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/11/tensorflow/" rel="next" title="tensorflow">
+                <i class="fa fa-chevron-left"></i> tensorflow
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/27/docker/" rel="prev" title="docker">
+                docker <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/mario.jpg"
+               alt="bxh566" />
+          <p class="site-author-name" itemprop="name">bxh566</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker"><span class="nav-number">1.</span> <span class="nav-text">docker</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#docker-image"><span class="nav-number">1.1.</span> <span class="nav-text">docker image</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#script"><span class="nav-number">1.1.1.</span> <span class="nav-text">script</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bxh566</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
