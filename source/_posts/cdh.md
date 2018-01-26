@@ -16,7 +16,7 @@ docker pull cloudera/quickstart:latest
 docker run -it --hostname=quickstart.cloudera --privileged=true -p 8888:8888 -P -d cloudera/quickstart:latest /usr/bin/docker-quickstart
 ```
 
-## KUDU
-(kudu example)[https://github.com/bosshart/kuduscreencast]
+# KUDU
+[kudu example](https://github.com/bosshart/kuduscreencast)
 
 

@@ -7,7 +7,7 @@ tags: [note]
 # CentOS7
 
 ### BBR
-(BBR)[https://www.vultr.com/docs/how-to-deploy-google-bbr-on-centos-7]
+[BBR](https://www.vultr.com/docs/how-to-deploy-google-bbr-on-centos-7)
 ```
 yum update
 cat /etc/redhat-release ##check version is 7.3.1611
@@ -33,7 +33,7 @@ lsmod | grep bbr
 ```
 
 ### FireWallD
-(FireWallD)[https://www.vultr.com/docs/using-firewalld-to-manage-your-firewall-on-centos-7]
+[FireWallD](https://www.vultr.com/docs/using-firewalld-to-manage-your-firewall-on-centos-7)
 1. add port
 ```
 firewall-cmd --add-port 2124/tcp --permanent
@@ -54,7 +54,7 @@ firewall-cmd --zone=public --list-services
 ```
 
 ### change ssh port
-(SSH port)[https://www.vultr.com/docs/changing-your-ssh-port-for-extra-security-on-centos-6-or-7]
+[SSH port](https://www.vultr.com/docs/changing-your-ssh-port-for-extra-security-on-centos-6-or-7)
 ```
 vi /etc/ssh/sshd_config
 ##change the port in this sshd_config file
