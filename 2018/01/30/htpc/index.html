@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="note,htpc," />
 
 
 
@@ -90,13 +90,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="bxh566">
-<meta property="og:url" content="https://bxh566.github.io/tags/life/index.html">
+<meta name="description" content="CentOS download minimal iso image: minial iso use dd comment to write image to u disk in Macbook 123456#list u diskdiskutil list#unmount u diskdiskutil unmountDisk /dev/disk[N]#write to u disksudo dd">
+<meta name="keywords" content="note,htpc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="htpc">
+<meta property="og:url" content="https://bxh566.github.io/2018/01/30/htpc/index.html">
 <meta property="og:site_name" content="bxh566">
+<meta property="og:description" content="CentOS download minimal iso image: minial iso use dd comment to write image to u disk in Macbook 123456#list u diskdiskutil list#unmount u diskdiskutil unmountDisk /dev/disk[N]#write to u disksudo dd">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-01-30T06:54:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="bxh566">
+<meta name="twitter:title" content="htpc">
+<meta name="twitter:description" content="CentOS download minimal iso image: minial iso use dd comment to write image to u disk in Macbook 123456#list u diskdiskutil list#unmount u diskdiskutil unmountDisk /dev/disk[N]#write to u disksudo dd">
 
 
 
@@ -124,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="https://bxh566.github.io/tags/life/"/>
+  <link rel="canonical" href="https://bxh566.github.io/2018/01/30/htpc/"/>
 
 
 
 
 
-  <title>Tag: life | bxh566</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>htpc | bxh566</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -156,7 +161,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left  ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -240,44 +245,167 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>life<small>Tag</small>
-      </h1>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://bxh566.github.io/2018/01/30/htpc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="bxh566">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/mario.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bxh566">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">htpc</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-30T03:56:11+00:00">
+                2018-01-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h2 id="CentOS"><a href="#CentOS" class="headerlink" title="CentOS"></a>CentOS</h2><ol>
+<li>download minimal iso image: <a href="http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1708.iso" target="_blank" rel="noopener">minial iso</a></li>
+<li><p>use dd comment to write image to u disk in Macbook</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#list u disk</span><br><span class="line">diskutil list</span><br><span class="line">#unmount u disk</span><br><span class="line">diskutil unmountDisk /dev/disk[N]</span><br><span class="line">#write to u disk</span><br><span class="line">sudo dd if=/path/to/isoimage of=/dev/rdisk[N] bs=1m</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>install centos</p>
+<ol>
+<li>用u盘给占美小主机安装centos7系统</li>
+<li>一路默认配置</li>
+<li>如果原来硬盘中有系统，需要在安装盘中移除所有分区，再用自动分区重新分配</li>
+<li>设置root账户，网络配置设置打开（默认关闭）</li>
+</ol>
+</li>
+</ol>
+<ol>
+<li>autossh reverse tunnel<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#need an pulibc IP vps, port 5555 is a listen port</span><br><span class="line">autossh -M 5555 -NR 8888:127.0.0.1:22 root@114.114.114.114</span><br><span class="line">#then can access htpc behind an NAT network</span><br><span class="line">ssh root@114.114.114.114 -p 8888</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
-      <h2 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/05/15/MotoX/" itemprop="url">
-              
-                <span itemprop="name">Mac MotoX</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-15T05:18:19+00:00"
-              content="2017-05-15" >
-          05-15
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+            <a href="/tags/htpc/" rel="tag"># htpc</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/26/nginx/" rel="next" title="nginx">
+                <i class="fa fa-chevron-left"></i> nginx
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -285,6 +413,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -304,8 +436,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/mario.jpg"
@@ -358,6 +499,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CentOS"><span class="nav-number">1.</span> <span class="nav-text">CentOS</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -478,6 +635,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
 
   
 
