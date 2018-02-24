@@ -53,6 +53,10 @@ docker login; and then copy ~/.docker/config.json to other vms
 tce-load -wi make
 ```
 
+### docker machine static ip
+[docker-machine-ipconfig](https://github.com/fivestars/docker-machine-ipconfig)
+
+
 ## docker
 ### query images from registry
 ```
@@ -91,5 +95,8 @@ docker rm $(docker ps -a -q)
 ```
 docker rmi $(docker images | grep "<none>" | awk {'print $3'})
 ```
+
+### mac docker Docker.qcow2
+~/Library/Containers/com.docker.docker/
 
 

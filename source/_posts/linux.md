@@ -21,3 +21,9 @@ echo "Script location: ${BASEDIR}"
 ssh-keygen -t rsa -b 4096 -C "yourname@emailaddress" -N "" -f ~/.ssh/id_rsa
 ```
 
+### monitor tcp traffic on specific port
+```
+sudo tcpdump -i any port 443
+```
+[ref link](https://superuser.com/questions/604998/monitor-tcp-traffic-on-specific-port)
+
