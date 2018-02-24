@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="bxh566">
 <meta property="og:description" content="kill java1ps -ef |grep java |grep -v grep |awk &apos;&amp;#123;print $2&amp;#125;&apos; |xargs kill dir of script12345#!/bin/bashecho &quot;Script executed from: $&amp;#123;PWD&amp;#125;&quot;BASEDIR=$(dirname $0)echo &quot;Script location:">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-24T06:36:49.000Z">
+<meta property="og:updated_time" content="2018-02-12T02:57:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux">
 <meta name="twitter:description" content="kill java1ps -ef |grep java |grep -v grep |awk &apos;&amp;#123;print $2&amp;#125;&apos; |xargs kill dir of script12345#!/bin/bashecho &quot;Script executed from: $&amp;#123;PWD&amp;#125;&quot;BASEDIR=$(dirname $0)echo &quot;Script location:">
@@ -322,6 +322,8 @@
         <h3 id="kill-java"><a href="#kill-java" class="headerlink" title="kill java"></a>kill java</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef |grep java |grep -v grep |awk <span class="string">'&#123;print $2&#125;'</span> |xargs <span class="built_in">kill</span></span><br></pre></td></tr></table></figure>
 <h3 id="dir-of-script"><a href="#dir-of-script" class="headerlink" title="dir of script"></a>dir of script</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Script executed from: <span class="variable">$&#123;PWD&#125;</span>"</span></span><br><span class="line"></span><br><span class="line">BASEDIR=$(dirname <span class="variable">$0</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Script location: <span class="variable">$&#123;BASEDIR&#125;</span>"</span></span><br></pre></td></tr></table></figure>
 <h3 id="generate-ssh-id-key"><a href="#generate-ssh-id-key" class="headerlink" title="generate ssh id key"></a>generate ssh id key</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">"yourname@emailaddress"</span> -N <span class="string">""</span> -f ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+<h3 id="monitor-tcp-traffic-on-specific-port"><a href="#monitor-tcp-traffic-on-specific-port" class="headerlink" title="monitor tcp traffic on specific port"></a>monitor tcp traffic on specific port</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tcpdump -i any port 443</span><br></pre></td></tr></table></figure>
+<p><a href="https://superuser.com/questions/604998/monitor-tcp-traffic-on-specific-port" target="_blank" rel="noopener">ref link</a></p>
 
       
     </div>
@@ -446,7 +448,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -494,7 +496,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#kill-java"><span class="nav-number">1.</span> <span class="nav-text">kill java</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dir-of-script"><span class="nav-number">2.</span> <span class="nav-text">dir of script</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#generate-ssh-id-key"><span class="nav-number">3.</span> <span class="nav-text">generate ssh id key</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#kill-java"><span class="nav-number">1.</span> <span class="nav-text">kill java</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dir-of-script"><span class="nav-number">2.</span> <span class="nav-text">dir of script</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#generate-ssh-id-key"><span class="nav-number">3.</span> <span class="nav-text">generate ssh id key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#monitor-tcp-traffic-on-specific-port"><span class="nav-number">4.</span> <span class="nav-text">monitor tcp traffic on specific port</span></a></li></ol></div>
             
 
           </div>

@@ -631,6 +631,168 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://bxh566.github.io/2017/05/15/Mac-MotoX/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="bxh566">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/mario.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bxh566">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/15/Mac-MotoX/" itemprop="url">Mac MotoX</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-15T05:18:19+00:00">
+                2017-05-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>用Mac给MotoX刷机</p>
+<h3 id="解锁BL"><a href="#解锁BL" class="headerlink" title="解锁BL"></a>解锁BL</h3><ol>
+<li><p>安装fastboot</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install android-sdk</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载并安装moto USB驱动<br><a href="http://www.motorola.com/getmdmmac" target="_blank" rel="noopener">http://www.motorola.com/getmdmmac</a></p>
+</li>
+<li>进入手机设置中的开发者模式，勾选“允许OEM解锁”</li>
+<li>关机，同时按音量向下和开机3秒，松开，进能进入fastboot</li>
+<li><p>连接手机和电脑，从命令行输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot oem get_unlock_data</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>复制解锁数据</p>
+</li>
+<li>进入moto解锁页面并登录<br><a href="https://motorola-global-portal.custhelp.com/app/standalone/bootloader/unlock-your-device-b" target="_blank" rel="noopener">https://motorola-global-portal.custhelp.com/app/standalone/bootloader/unlock-your-device-b</a></li>
+<li>输入解锁数据，并按Request Unlock Key</li>
+<li>进入登录moto的邮箱，复制unlock key(e.g. 123456)</li>
+<li><p>在电脑的命令行输入, 替换123456为自己的unlock key</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot oem unlock 123456</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot reboot</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>参考 <a href="http://bbs.ihei5.com/thread-385849-1-1.html" target="_blank" rel="noopener">http://bbs.ihei5.com/thread-385849-1-1.html</a></p>
+<h3 id="安装TWPR"><a href="#安装TWPR" class="headerlink" title="安装TWPR"></a>安装TWPR</h3><ol>
+<li>下载MotoX对应的TWPR<br><a href="https://dl.twrp.me/victara/" target="_blank" rel="noopener">https://dl.twrp.me/victara/</a></li>
+<li>进去fastboot模式，并连接上电脑</li>
+<li><p>打开命令行并进去下载twrp到目录，刷入TWPR，替换twrp-3.1.0-0-victara.img为对应下载的twrp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot flash recovery twrp-3.1.0-0-victara.img</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>遇到粉红色警告dismatch partition size(recovery)，忽视之</p>
+</li>
+</ol>
+<h3 id="刷入lineageOS"><a href="#刷入lineageOS" class="headerlink" title="刷入lineageOS"></a>刷入lineageOS</h3><ol>
+<li>下载支持国行xt1085的包，支持电信4g<br>下载地址参考 <a href="http://bbs.ihei5.com/thread-743540-1-1.html" target="_blank" rel="noopener">http://bbs.ihei5.com/thread-743540-1-1.html</a></li>
+<li>进入fastboot，选择recovery</li>
+<li>选择wipe - advanced wipe - 全部打勾 -swipe to wipe.<br><em>由于没有外接otg，otg会显示error，忽视之.</em><br><em>此步骤会把原有系统都清除掉，重启会不能进入手机，只能进入fastboot，谨慎对待</em></li>
+<li><p>copy rom包到手机, 用adb push命令<br><em>Mac下，无法识别android，无法直接copy.</em><br><em>手机进入fastboot，然后连接电脑，命令行输入adb devices，无输出；然后选择recovery，再从命令行输入adb devices，有输出recovery</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb push lineage-14.1-20170430-UNOFFICIAL-victara.zip /sdcard/.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>从recovery页面选择install ,然后点击刚刚复制进去的rom包安装即可</p>
+</li>
+<li>等待开机即可，由于是第一次开机所以会比较慢一点。<br><em>默认关闭root,开启root方法为在开发者选项里的“Root授权”，选择仅限于adb即可</em></li>
+</ol>
+<h3 id="全局root"><a href="#全局root" class="headerlink" title="全局root"></a>全局root</h3><ol>
+<li>下载root卡刷包<br><a href="http://www.lineageosrom.com/2017/01/download-supersuzp-and-su-removalzip.html，" target="_blank" rel="noopener">http://www.lineageosrom.com/2017/01/download-supersuzp-and-su-removalzip.html，</a> 选择addonsu-arm-signed.zip</li>
+<li>进入recovery并刷入， 就可以在开发者选项修改了</li>
+</ol>
+<h3 id="去除网络的感叹号"><a href="#去除网络的感叹号" class="headerlink" title="去除网络的感叹号"></a>去除网络的感叹号</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell &quot;settings put global captive_portal_https_url https://captive.v2ex.co/generate_204&quot;;</span><br></pre></td></tr></table></figure>
+<p><em>也可以下载JuiceSSH，连接本地设备，输入su， 然后再输入命令“settings put global captive_portal_https_url <a href="https://captive.v2ex.co/generate_204”" target="_blank" rel="noopener">https://captive.v2ex.co/generate_204”</a></em></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://bxh566.github.io/2017/05/15/MotoX/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1109,6 +1271,8 @@
             <h3 id="kill-java"><a href="#kill-java" class="headerlink" title="kill java"></a>kill java</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef |grep java |grep -v grep |awk <span class="string">'&#123;print $2&#125;'</span> |xargs <span class="built_in">kill</span></span><br></pre></td></tr></table></figure>
 <h3 id="dir-of-script"><a href="#dir-of-script" class="headerlink" title="dir of script"></a>dir of script</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Script executed from: <span class="variable">$&#123;PWD&#125;</span>"</span></span><br><span class="line"></span><br><span class="line">BASEDIR=$(dirname <span class="variable">$0</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Script location: <span class="variable">$&#123;BASEDIR&#125;</span>"</span></span><br></pre></td></tr></table></figure>
 <h3 id="generate-ssh-id-key"><a href="#generate-ssh-id-key" class="headerlink" title="generate ssh id key"></a>generate ssh id key</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">"yourname@emailaddress"</span> -N <span class="string">""</span> -f ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+<h3 id="monitor-tcp-traffic-on-specific-port"><a href="#monitor-tcp-traffic-on-specific-port" class="headerlink" title="monitor tcp traffic on specific port"></a>monitor tcp traffic on specific port</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tcpdump -i any port 443</span><br></pre></td></tr></table></figure>
+<p><a href="https://superuser.com/questions/604998/monitor-tcp-traffic-on-specific-port" target="_blank" rel="noopener">ref link</a></p>
 
           
         
@@ -1192,7 +1356,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

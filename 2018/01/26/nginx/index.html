@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="bxh566">
 <meta property="og:description" content="reverse proxy add proxy.conf file under /etc/nginx/conf.d/ 12345678server  &amp;#123;    listen 80; #server port    server_name spark.docker.local; #dummy server name    location / &amp;#123;      proxy_pass">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-26T07:04:43.000Z">
+<meta property="og:updated_time" content="2018-02-12T02:59:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx">
 <meta name="twitter:description" content="reverse proxy add proxy.conf file under /etc/nginx/conf.d/ 12345678server  &amp;#123;    listen 80; #server port    server_name spark.docker.local; #dummy server name    location / &amp;#123;      proxy_pass">
@@ -327,6 +327,8 @@
 </li>
 <li>access “<a href="http://spark.docker.local" target="_blank" rel="noopener">http://spark.docker.local</a>“ in browser, it will proxy to spark web UI page</li>
 </ol>
+<h3 id="CORS-on-Nginx"><a href="#CORS-on-Nginx" class="headerlink" title="CORS on Nginx"></a>CORS on Nginx</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">      add_header &apos;Access-Control-Allow-Origin&apos; &apos;*&apos;;</span><br><span class="line">      add_header &apos;Access-Control-Allow-Methods&apos; &apos;GET, POST, OPTIONS&apos;;</span><br><span class="line">      add_header &apos;Access-Control-Allow-Headers&apos; &apos;DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range&apos;;</span><br><span class="line">      add_header &apos;Access-Control-Expose-Headers&apos; &apos;Content-Length,Content-Range&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://enable-cors.org/server_nginx.html" target="_blank" rel="noopener">ref link</a></p>
 
       
     </div>
@@ -455,7 +457,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -503,7 +505,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#reverse-proxy"><span class="nav-number">1.</span> <span class="nav-text">reverse proxy</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#reverse-proxy"><span class="nav-number">1.</span> <span class="nav-text">reverse proxy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS-on-Nginx"><span class="nav-number">2.</span> <span class="nav-text">CORS on Nginx</span></a></li></ol></div>
             
 
           </div>
